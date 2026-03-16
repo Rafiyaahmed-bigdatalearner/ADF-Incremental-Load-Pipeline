@@ -19,15 +19,15 @@ The pipeline is **parameterized and reusable**, making it ideal for showcasing d
 ## Folder Structure
 ADF-Incremental-Pipeline/
 ├─ Pipelines/
-│ └─ IncrementalLoad.json ← ADF pipeline with Lookup and Copy activities
+│   └─ IncrementalLoad.json
 ├─ Datasets/
-│ ├─ OrdersSource.json ← Source dataset
-│ └─ OrdersSink.json ← Sink dataset
+│   ├─ OrdersSource.json
+│   └─ OrdersSink.json
 ├─ LinkedServices/
-│ └─ AzureSQLDatabase.json ← Linked service template (placeholders for credentials)
+│   └─ AzureSQLDatabase.json
 ├─ SampleData/
-│ └─ insert_sample_data.sql ← Sample data to populate source table
-├─ parameters.json ← Pipeline parameters (tables, last run date, etc.)
+│   └─ insert_sample_data.sql
+├─ parameters.json
 └─ README.md
 
 ---
@@ -80,7 +80,7 @@ VALUES
 (4, 'hema', 'kumar', '2026-03-15T15:03:08.327'),
 (5, 'Alice', 'singh', '2026-03-16T08:23:14.100');
 
-How to Extend
+## How to Extend
 
 Add additional tables by creating new source/sink datasets.
 
@@ -88,7 +88,7 @@ Modify the pipeline to handle multiple tables in parallel.
 
 Parameterize additional properties like schema name or incremental column.
 
-Skills Demonstrated
+## Skills Demonstrated
 
 Azure Data Factory: Pipeline, Lookup, Copy Activity
 
@@ -100,12 +100,4 @@ Parameterization & Dynamic Content in ADF
 
 Version control and GitHub-ready project structure
 
-Repository Goal
 
-This project serves as a portfolio-ready example for:
-
-Data Engineers with 3–5 years experience
-
-Showcasing ETL pipeline design, incremental load strategy, and Azure skills
-
-Demonstrating parameterized, reusable ADF pipelines
