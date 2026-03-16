@@ -1,0 +1,8 @@
+{
+  "SourceTable": "orders",
+  "SinkTable": "Orders_Sink",
+  "SourceDatabase": "pocdatabase",
+  "SinkDatabase": "pocdatabase",
+  "ServerName": "rafiyanew.database.windows.net",
+  "LastRunDate": "2026-03-15T08:17:02.983"
+}
