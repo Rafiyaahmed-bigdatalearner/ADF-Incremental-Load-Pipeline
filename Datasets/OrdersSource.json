@@ -1,0 +1,36 @@
+{
+    "name": "AzureSqlTable2",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzureSqlDatabase3",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "AzureSqlTable",
+        "schema": [
+            {
+                "name": "order_id",
+                "type": "int",
+                "precision": 10
+            },
+            {
+                "name": "FirstName",
+                "type": "nvarchar"
+            },
+            {
+                "name": "LastName",
+                "type": "nvarchar"
+            },
+            {
+                "name": "inserttime",
+                "type": "datetime",
+                "precision": 23,
+                "scale": 3
+            }
+        ],
+        "typeProperties": {
+            "schema": "dbo",
+            "table": "orders"
+        }
+    }
+}
