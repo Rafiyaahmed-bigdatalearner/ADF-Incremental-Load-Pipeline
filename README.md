@@ -70,7 +70,6 @@ ADF-Incremental-Pipeline/
 - Verify that only records **newer than `LastRunDate`** are copied to the sink.  
 
 ---
-
 ## Sample SQL for Testing
 
 ```sql
@@ -80,7 +79,7 @@ VALUES
 (2, 'rani', 'sharma', '2026-03-15T08:17:02.987'),
 (3, 'yuvraj', 'verma', '2026-03-15T08:17:02.990'),
 (4, 'hema', 'kumar', '2026-03-15T15:03:08.327'),
-(5, 'Alice', 'singh', '2026-03-16T08:23:14.100');
+(5, 'Alice', 'singh', '2026-03-16T08:23:14.100'); ```
 
 ---
 
