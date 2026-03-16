@@ -34,6 +34,8 @@ ADF-Incremental-Pipeline/
 
 ---
 
+---
+
 ## Prerequisites
 1. Azure subscription with **Azure Data Factory** and **Azure SQL Database**.  
 2. Tables `orders` (source) and `Orders_Sink` (sink) in Azure SQL Database.  
@@ -43,43 +45,28 @@ ADF-Incremental-Pipeline/
 
 ## Setup Instructions
 
-### 1. Deploy Linked Services
-- Use `LinkedServices/AzureSQLDatabase.json` as a template.  
-- Replace placeholders (`<your-server-name>`, `<your-username>`, `<your-password>`) with your own credentials.  
+1. **Deploy Linked Services**  
+   - Use `LinkedServices/AzureSQLDatabase.json` as a template.  
+   - Replace placeholders (`<your-server-name>`, `<your-username>`, `<your-password>`) with your own credentials.  
 
-### 2. Deploy Datasets
-- Import `Datasets/OrdersSource.json` and `Datasets/OrdersSink.json` into ADF.  
-- Ensure `linkedServiceName.referenceName` points to your linked service.
+2. **Deploy Datasets**  
+   - Import `Datasets/OrdersSource.json` and `Datasets/OrdersSink.json` into ADF.  
+   - Ensure `linkedServiceName.referenceName` points to your linked service.
 
-### 3. Create Pipeline
-- Import `Pipelines/IncrementalLoad.json` into ADF.  
-- Map pipeline parameters to your datasets and activities.  
+3. **Create Pipeline**  
+   - Import `Pipelines/IncrementalLoad.json` into ADF.  
+   - Map pipeline parameters to your datasets and activities.  
 
-### 4. Configure Parameters
-- Edit `parameters.json` to define:  
-  - `SourceTable`  
-  - `SinkTable`  
-  - `LastRunDate` (for incremental load)  
-  - `SourceDatabase`, `SinkDatabase`, `ServerName`  
+4. **Configure Parameters**  
+   - Edit `parameters.json` to define:  
+     - `SourceTable`  
+     - `SinkTable`  
+     - `LastRunDate` (for incremental load)  
+     - `SourceDatabase`, `SinkDatabase`, `ServerName`  
 
-### 5. Insert Sample Data
-- Run `SampleData/insert_sample_data.sql` in your source database to populate initial records.  
-
-### 6. Run the Pipeline
-- Execute the pipeline in ADF.  
-- Verify that only records **newer than `LastRunDate`** are copied to the sink.  
-
----
-## Sample SQL for Testing
-
-```sql
-INSERT INTO dbo.orders (order_id, FirstName, LastName, inserttime)
-VALUES
-(1, 'manish', 'tiwari', '2026-03-15T08:17:02.983'),
-(2, 'rani', 'sharma', '2026-03-15T08:17:02.987'),
-(3, 'yuvraj', 'verma', '2026-03-15T08:17:02.990'),
-(4, 'hema', 'kumar', '2026-03-15T15:03:08.327'),
-(5, 'Alice', 'singh', '2026-03-16T08:23:14.100'); ```
+5. **Run the Pipeline**  
+   - Execute the pipeline in ADF.  
+   - Verify that only records **newer than `LastRunDate`** are copied to the sink.  
 
 ---
 
@@ -97,3 +84,18 @@ VALUES
 - **SQL & Azure SQL Database operations:** Query optimization, data validation, and schema design.  
 - **Parameterization & Dynamic Content in ADF:** Using parameters and dynamic expressions to make pipelines reusable.  
 - **Version control & GitHub:** Exporting ADF artifacts as JSON and maintaining a portfolio-ready repository.
+
+---
+
+## Sample SQL for Testing
+
+```sql
+INSERT INTO dbo.orders (order_id, FirstName, LastName, inserttime)
+VALUES
+(1, 'manish', 'tiwari', '2026-03-15T08:17:02.983'),
+(2, 'rani', 'sharma', '2026-03-15T08:17:02.987'),
+(3, 'yuvraj', 'verma', '2026-03-15T08:17:02.990'),
+(4, 'hema', 'kumar', '2026-03-15T15:03:08.327'),
+(5, 'Alice', 'singh', '2026-03-16T08:23:14.100');
+
+facts as JSON and maintaining a portfolio-ready repository.
