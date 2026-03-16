@@ -82,6 +82,8 @@ VALUES
 (4, 'hema', 'kumar', '2026-03-15T15:03:08.327'),
 (5, 'Alice', 'singh', '2026-03-16T08:23:14.100');
 
+---
+
 ## How to Extend
 - **Add additional tables:** Create new source and sink datasets for each table.  
 - **Handle multiple tables in parallel:** Modify the pipeline to copy multiple tables simultaneously.  
